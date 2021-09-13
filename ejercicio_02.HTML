@@ -18,25 +18,31 @@ function deg2rad(g) {
 
 function rotarTrazar(n) {
   if (n == 1) {
+    ctx.iz();
     ctx.translate(200, 80);
     ctx.rotate(deg2rad(45));
-    ctx.translate(-200, 80);
-    return 1;
+    ctx.translate(200, 80);	
 }else {
+    ctx.dr();
     ctx.translate(200, 80);
-    ctx.rotate(deg2rad(60));
-    return 2;
+    ctx.rotate(deg2rad(45));
 }
 }
 
 function draw() {
+  ctx.restore();
   ctx.save();
+
+function iz(){
   // first blue rect
   ctx.fillStyle = '#0095DD';
   ctx.fillRect(30, 30, 100, 100);
+}
 
+function dr(){
   // second blue rect
   ctx.fillRect(150, 30, 100, 100);
+}
 }
 
   /*ctx.rotate(deg2rad(25));
